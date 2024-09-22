@@ -1,12 +1,8 @@
 package orgd.dinuka.productservice.controller;
 
 import lombok.AllArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import orgd.dinuka.productservice.entity.Product;
 import orgd.dinuka.productservice.service.ProductService;
 
@@ -24,4 +20,13 @@ public class ProductController {
     public ResponseEntity<List<Product>> getAll() {
         return ResponseEntity.ok(productService.getAll());
     }
+
+    @PostMapping("/add")
+    public ResponseEntity<Product> save(Product product){
+        return  ResponseEntity.ok(productService.addProduct(product));
+    }
+
+
+
+
 }
