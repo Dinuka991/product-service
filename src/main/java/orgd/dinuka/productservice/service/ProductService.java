@@ -12,4 +12,8 @@ public interface ProductService {
     Product getProductByName(String name);
     void  deleteProduct(Long id);
     List<Object> getExtProducts();
+
+    Product updateProduct(long l, Product existingProduct);
+
+    void deleteProductById(long l);
 }
