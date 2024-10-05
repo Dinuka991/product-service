@@ -51,7 +51,7 @@ public class ProductControllerTest {
     void testGetProductById() throws Exception {
         Category category = new Category(1L, "Electronics", "Electronic items", null);
         Tag tag1 = new Tag(1L, "Home Appliances", new HashSet<>());
-        Set<Tag> tagSet = new HashSet<>(Arrays.asList(tag1));
+        Set<Tag> tagSet = new HashSet<>(List.of(tag1));
 
         Product product = new Product(1L, "TV", 500.00, 10, category, tagSet);
 
@@ -85,7 +85,7 @@ public class ProductControllerTest {
     void testSaveProduct() throws Exception {
         Category category = new Category(1L, "Electronics", "Electronic items", null);
         Tag tag1 = new Tag(1L, "Home Appliances", new HashSet<>());
-        Set<Tag> tagSet = new HashSet<>(Arrays.asList(tag1));
+        Set<Tag> tagSet = new HashSet<>(List.of(tag1));
 
         Product product = new Product(1L, "Fridge", 1200.00, 2, category, tagSet);
 
@@ -112,7 +112,7 @@ public class ProductControllerTest {
     @Test
     void testGetUsers() throws Exception {
         Product externalProduct = new Product(1L, "External Product", 700.00, 5, null, new HashSet<>());
-        Set<Product> externalProducts = new HashSet<>(Arrays.asList(externalProduct));
+        Set<Product> externalProducts = new HashSet<>(List.of(externalProduct));
 
         Mockito.when(productService.getExtProducts()).thenReturn(Collections.singletonList(externalProducts));
 
